@@ -78,10 +78,25 @@ class MainActivity : AppCompatActivity() {
                             resultView.text = currentInput;
                         };
                         in listOf("+", "-", "x", "/") -> {
+                            resultView.text = "";
                             previousResultView.text = currentValue.toString();
                             if (currentInput.isNotEmpty()) {
-                                currentValue = currentInput.toInt();
-                                currentInput = "";
+                                if(currentOperator == null) {
+                                    currentValue = currentInput.toInt();
+                                    currentInput = "";
+                                } else {
+                                    var value = currentInput.toInt();
+                                    when(currentOperator) {
+                                        "+" -> currentValue += value;
+                                        "-" -> currentValue -= value;
+                                        "*" -> currentValue *= value;
+                                        "/" -> if(value != 0) currentValue = currentValue / value else {
+                                            resultView.text = "ERROR";
+                                            return@setOnClickListener;
+                                        }
+                                    }
+                                    currentInput = "";
+                                }
                             }
                             currentOperator = if (buttonText == "x") "*" else buttonText;
                             operatorView.text = buttonText;
