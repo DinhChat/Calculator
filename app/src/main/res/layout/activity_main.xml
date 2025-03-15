@@ -8,6 +8,20 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/previousResult"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textSize="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/operator" />
+
+    <TextView
+        android:id="@+id/operator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/result" />
+
+    <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="100dp"
