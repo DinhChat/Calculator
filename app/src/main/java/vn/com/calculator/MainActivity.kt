@@ -52,6 +52,8 @@ class MainActivity : AppCompatActivity() {
                             previousResultView.text = "";
                         };
                         "=" -> {
+                            previousResultView.text = "";
+                            operatorView.text = "";
                             if(currentInput.isNotEmpty() && currentOperator != null) {
                                 var value2 = currentInput.toInt();
                                 when(currentOperator) {
@@ -67,7 +69,6 @@ class MainActivity : AppCompatActivity() {
                                 resultView.text = currentValue.toString();
                                 currentOperator = null;
                                 currentInput = currentValue.toString();
-                                previousResultView.text = currentValue.toString();
 
                             }
                         }

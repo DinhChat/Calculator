@@ -16,10 +16,11 @@
 
     <TextView
         android:id="@+id/operator"
-        android:layout_width="match_parent"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/result" />
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/result"
