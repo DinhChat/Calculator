@@ -73,16 +73,18 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                         in "0".."9" -> {
+
                             previousResultView.text = currentValue.toString();
                             currentInput += buttonText;
                             resultView.text = currentInput;
                         };
                         in listOf("+", "-", "x", "/") -> {
+                            //previousResultView.text = currentValue.toString();
                             resultView.text = "";
-                            previousResultView.text = currentValue.toString();
                             if (currentInput.isNotEmpty()) {
                                 if(currentOperator == null) {
                                     currentValue = currentInput.toInt();
+                                    previousResultView.text = currentValue.toString();
                                     currentInput = "";
                                 } else {
                                     var value = currentInput.toInt();
@@ -96,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                                         }
                                     }
                                     currentInput = "";
+                                    previousResultView.text = currentValue.toString();
                                 }
                             }
                             currentOperator = if (buttonText == "x") "*" else buttonText;
